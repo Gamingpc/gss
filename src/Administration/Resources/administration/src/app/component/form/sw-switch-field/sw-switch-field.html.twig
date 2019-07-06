@@ -1,0 +1,25 @@
+<div class="sw-field--switch" :class="swSwitchFieldClasses">
+    <div class="sw-field--switch__content">
+        <div class="sw-field--switch__input">
+            <input type="checkbox"
+                   :id="formFieldName || identification"
+                   :name="formFieldName || identification"
+                   :checked="inputState"
+                   :disabled="disabled"
+                   @change="onChange">
+            <div class="sw-field__switch-state">
+                <div class="sw-field__switch-state-knob"></div>
+            </div>
+        </div>
+
+        <sw-base-field v-bind="$attrs"
+                       :disabled="disabled"
+                       :isInheritanceField="isInheritanceField"
+                       :isInherited="isInherited"
+                       :name="identification"
+                       @inheritance-restore="restoreInheritance">
+        </sw-base-field>
+
+    </div>
+    <sw-field-error :error="$attrs.error || actualError"></sw-field-error>
+</div>

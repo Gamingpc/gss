@@ -1,0 +1,138 @@
+{% block sw_manufacturer_detail %}
+    <sw-page class="sw-manufacturer-detail">
+
+        {% block sw_manufacturer_detail_header %}
+            <template slot="smart-bar-header">
+                <h2>{{ placeholder(manufacturer, 'name', $tc('sw-manufacturer.detail.textHeadline')) }}</h2>
+            </template>
+        {% endblock %}
+
+        {% block sw_manufacturer_detail_actions %}
+            <template slot="smart-bar-actions">
+
+                {% block sw_manufacturer_detail_actions_abort %}
+                    <sw-button :disabled="manufacturer.isLoading" :routerLink="{ name: 'sw.manufacturer.index' }">
+                        {{ $tc('sw-manufacturer.detail.buttonCancel') }}
+                    </sw-button>
+                {% endblock %}
+
+                {% block sw_manufacturer_detail_actions_save %}
+                <sw-button-process
+                        class="sw-manufacturer-detail__save-action"
+                        :isLoading="isLoading"
+                        :processSuccess="isSaveSuccessful"
+                        :disabled="manufacturer.isLoading"
+                        variant="primary"
+                        @process-finish="saveFinish"
+                        @click.prevent="onSave">
+                    {{ $tc('sw-manufacturer.detail.buttonSave') }}
+                </sw-button-process>
+                {% endblock %}
+
+            </template>
+        {% endblock %}
+
+        {% block sw_manufacturer_detail_language_switch %}
+            <sw-language-switch slot="language-switch"
+                @on-change="onChangeLanguage"
+                :saveChangesFunction="saveOnLanguageChange"
+                :abortChangeFunction="abortOnLanguageChange">
+            </sw-language-switch>
+        {% endblock %}
+
+        {% block sw_manufacturer_detail_content %}
+            <sw-card-view slot="content">
+
+            {% block sw_manufacturer_detail_content_language_info %}
+                <sw-language-info
+                    :entityDescription="placeholder(manufacturer, 'name', $tc('sw-manufacturer.detail.textHeadline'))">
+                </sw-language-info>
+            {% endblock %}
+
+            {% block sw_manufacturer_detail_base_basic_info_card %}
+                <sw-card :title="$tc('sw-manufacturer.detail.cardTitleManufacturerInfo')" :isLoading="manufacturer.isLoading">
+                    <sw-container columns="repeat(auto-fit, minmax(250px, 1fr)" gap="0 30px" class="sw-manufacturer-detail__container">
+                        <div class="sw-manufacturer-detail__base-info-wrapper">
+
+                            {% block sw_manufacturer_detail_base_info_field_name %}
+                                <sw-field type="text"
+                                    :label="$tc('sw-manufacturer.detail.labelName')"
+                                    :placeholder="placeholder(manufacturer, 'name', $tc('sw-manufacturer.detail.placeholderName'))"
+                                    name="name"
+                                    validation="required"
+                                    required
+                                    v-model="manufacturer.name">
+                                </sw-field>
+                            {% endblock %}
+
+                            {% block sw_manufacturer_detail_base_info_field_link %}
+                            <sw-field type="text"
+                                :label="$tc('sw-manufacturer.detail.labelLink')"
+                                :placeholder="$tc('sw-manufacturer.detail.placeholderLink')"
+                                name="link"
+                                v-model="manufacturer.link">
+                            </sw-field>
+                            {% endblock %}
+                        </div>
+
+                        {% block sw_manufacturer_detail_logo_upload %}
+                            <sw-upload-store-listener
+                                :uploadTag="mediaUploadTag"
+                                autoUpload
+                                @media-upload-finish="setMediaItem">
+                            </sw-upload-store-listener>
+                            <sw-media-upload
+                                :source="mediaItem"
+                                class="sw-manufacturer-detail__logo-upload"
+                                :allowMultiSelect="false"
+                                variant="regular"
+                                :uploadTag="mediaUploadTag"
+                                :label="$tc('sw-manufacturer.detail.labelLogo')"
+                                :defaultFolder="manufacturerStore.getEntityName()"
+                                @sw-media-upload-media-upload-success="setMediaItem"
+                                @media-drop="onDropMedia"
+                                @media-upload-remove-image="onUnlinkLogo">
+                            </sw-media-upload>
+                        {% endblock %}
+                    </sw-container>
+
+                    {% block sw_manufacturer_detail_base_info_field_description %}
+                        <sw-text-editor
+                            :label="$tc('sw-manufacturer.detail.labelDescription')"
+                            :placeholder="placeholder(manufacturer, 'description', $tc('sw-manufacturer.detail.placeholderDescription'))"
+                            name="description"
+                            v-model="manufacturer.description">
+                        </sw-text-editor>
+                    {% endblock %}
+                </sw-card>
+            {% endblock %}
+
+            {% block sw_manufacturer_detail_custom_field_sets %}
+                <sw-card :title="$tc('sw-settings-custom-field.general.mainMenuItemGeneral')"
+                         v-if="customFieldSets.length > 0"
+                         :isLoading="manufacturer.isLoading">
+                    <sw-custom-field-set-renderer
+                            :entity="manufacturer"
+                            :sets="customFieldSets">
+                    </sw-custom-field-set-renderer>
+                </sw-card>
+            {% endblock %}
+        </sw-card-view>
+    {% endblock %}
+
+    {% block sw_manufacturer_detail_sidebar %}
+        <template slot="sidebar">
+            <sw-sidebar :propagateWidth="true">
+                <sw-sidebar-media-item ref="mediaSidebarItem">
+                    <template slot="context-menu-items" slot-scope="media">
+                        <sw-context-menu-item @click="setMediaFromSidebar(media.mediaItem)">
+                            {{ $tc('sw-manufacturer.detail.labelUseAsLogo') }}
+                        </sw-context-menu-item>
+                    </template>
+                </sw-sidebar-media-item>
+            </sw-sidebar>
+        </template>
+     {% endblock %}
+
+    </sw-page>
+{% endblock %}

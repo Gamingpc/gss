@@ -1,0 +1,55 @@
+{
+  "sw-settings-country": {
+    "general": {
+      "mainMenuItemGeneral": "Countries",
+      "placeholderSearchBar": "Search countries"
+    },
+    "list": {
+      "textHeadline": "Countries",
+      "textDeleteConfirm": "Are you sure you want to delete the country \"{name}\"?",
+      "columnName": "Name",
+      "columnPosition": "Position",
+      "columnIso": "ISO",
+      "columnIso3": "ISO3",
+      "columnActive": "Active",
+      "buttonAddCountry": "Add country",
+      "contextMenuEdit": "Edit",
+      "modalTitleDelete": "Delete Country",
+      "titleDeleteSuccess": "Success",
+      "messageDeleteSuccess": "Country \"{name}\" has been deleted successfully.",
+      "buttonCancel": "Cancel",
+      "buttonDelete": "Delete"
+    },
+    "detail": {
+      "textHeadline": "New country",
+      "titleCard": "Settings",
+      "titleSaveSuccess": "Success",
+      "messageSaveSuccess": "Country \"{name}\" has been saved successfully.",
+      "labelName": "Name",
+      "labelPosition": "Position",
+      "labelIso": "ISO",
+      "labelIso3": "ISO3",
+      "labelActive": "Active",
+      "placeholderName": "Enter name",
+      "placeholderPosition": "1",
+      "placeholderIso": "Enter ISO code",
+      "placeholderIso3": "Enter three-digit ISO code",
+      "buttonCancel": "Cancel",
+      "buttonSave": "Save",
+      "buttonAddCountryState": "Add country state",
+      "editAction": "Edit",
+      "columnStateNameLabel": "Name",
+      "columnStateShortCodeLabel": "Short code"
+    }
+  },
+  "sw-country-state-detail": {
+    "titleNew": "New country state",
+    "titleEdit": "Edit country state",
+    "buttonSave": "Save",
+    "buttonCancel": "Cancel",
+    "labelName": "Name",
+    "labelPosition": "Position",
+    "labelShortCode": "ISO-Code",
+    "tooltipPosition": "Controls the position of the country state in lists etc."
+  }
+}

@@ -1,0 +1,13 @@
+{% block sw_side_navigation_item %}
+    <a class="sw-tabs-item" :class="tabsItemClasses" v-if="isNative" @click="clickEvent" v-bind="$attrs">
+        {% block sw_tabs_item_slot %}
+            <slot></slot>
+        {% endblock %}
+    </a>
+
+    <router-link v-else :class="tabsItemClasses" ref="sw-tabs-item" v-bind="$attrs" class="sw-tabs-item" @click.native="clickEvent" :to="route">
+        {% block sw_tabs_item_slot_native %}
+            <slot></slot>
+        {% endblock %}
+    </router-link>
+{% endblock %}

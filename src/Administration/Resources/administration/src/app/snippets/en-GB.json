@@ -1,0 +1,607 @@
+{
+  "global": {
+    "notification": {
+      "notificationSaveErrorTitle": "Error",
+      "notificationSaveErrorMessage": "An error occurred while saving the entity \"{entityName}\".",
+      "notificationSaveSuccessTitle": "Success",
+      "notificationSaveSuccessMessage": "The entity \"{entityName}\" has been saved successfully."
+    },
+    "notification-center": {
+      "title": "Notifications",
+      "emptyText": "Congratulations, all done.",
+      "deleteModal": {
+        "title": "Delete notifications",
+        "textConfirm": "Are you sure you really want to delete all notifications?",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      },
+      "worker-listener": {
+        "thumbnailGeneration": {
+          "title": "Thumbnails are being generated",
+          "message": "No thumbnails remains. | One thumbnail remains. | {n} Thumbnails remains.",
+          "titleSuccess": "Thumbnails finished",
+          "messageSuccess": "Generation of the thumbnails was completed."
+        }
+      },
+      "plugin-updates-listener": {
+        "updatesAvailableTitle": "Plugin-Updates available.",
+        "updatesAvailableMessage": "For some Plugins are updates available."
+      }
+    },
+    "sw-admin-menu": {
+      "linkChangeLanguage": "Change language",
+      "linkLogout": "Logout",
+      "linkMinimizeMenu": "Minimize menu",
+      "textShopwareAdmin": "Shopware administration",
+      "textProjectName": "Administration",
+      "navigation": {
+        "mainMenuItemCatalogue": "Catalogues",
+        "mainMenuItemContent": "Content",
+        "mainMenuItemMarketing": "Marketing"
+      }
+    },
+    "sw-address": {
+      "edit": "Edit"
+    },
+    "entity-components": {
+      "editAction": "Edit",
+      "deleteAction": "Delete",
+      "deleteMessage": "Are you sure you want to delete the item?",
+      "deleteCancel": "Cancel",
+      "deleteConfirm": "Delete",
+      "deleteTitle": "Delete entry"
+    },
+    "sw-field": {
+      "notification": {
+        "notificationCopySuccessTitle": "Success",
+        "notificationCopySuccessMessage": "Text has been copied to clipboard.",
+        "notificationCopyFailureTitle": "Error",
+        "notificationCopyFailureMessage": "Text could not be copied to clipboard."
+      },
+      "titleShowPassword": "Show password",
+      "titleHidePassword": "Hide password",
+      "tooltipRestoreInheritance": "Restore inheritance"
+    },
+    "sw-field-copyable": {
+      "tooltip": {
+        "wasCopied": "was copied",
+        "canCopy": "copy to clipboard"
+      }
+    },
+    "sw-price-field": {
+      "labelPriceGross": "Price (gross)",
+      "labelPriceNet": "Price (net)"
+    },
+    "sw-text-editor": {
+      "labelTextLength": "{count} character | {count} characters"
+    },
+    "sw-tag-field":{
+      "title": "Tags",
+      "listItemAdd": "Add \"{term}\"",
+      "placeholder": "Type to search tags..."
+    },
+    "sw-grid-row": {
+      "buttonInlineEditCancel": "Cancel",
+      "buttonInlineEditSave": "Save"
+    },
+    "sw-data-grid": {
+      "tooltipListSettings": "List settings",
+      "labelSettingsCompactMode": "Use compact view",
+      "labelSettingsPreviewImages": "Show preview images",
+      "labelColumnHide": "Hide column",
+      "titleButtonInlineEditSave": "Save",
+      "titleButtonInlineEditCancel": "Cancel"
+    },
+    "sw-pagination": {
+      "labelItemsPerPage": "Items per page:"
+    },
+    "sw-modal": {
+      "labelClose": "Close"
+    },
+    "sw-media-field": {
+      "labelToggleSearchExisting": "Search media",
+      "labelToggleUploadNew": "Upload new media",
+      "labelUnlink": "Unlink media"
+    },
+    "sw-media-folder-item": {
+      "labelContextMenuDelete": "Delete",
+      "labelContextMenuRename": "Rename",
+      "labelContextMenuMove": "Move",
+      "labelContextMenuShowMedia": "Show media",
+      "labelContextMenuShowSettings": "Settings",
+      "labelContextMenuDissolve": "Dissolve",
+      "notification": {
+        "errorBlankItemName": {
+          "title": "Error",
+          "message": "Folder could not be saved: Please enter a name."
+        },
+        "renamingError": {
+          "title": "Error",
+          "message": "Error saving folder."
+        }
+      }
+    },
+    "sw-media-media-item": {
+      "labelContextMenuDelete": "Delete",
+      "labelContextMenuCopyLink": "Copy Link",
+      "labelContextMenuReplace": "Replace",
+      "labelContextMenuRename": "Rename",
+      "labelContextMenuDetail": "Details",
+      "labelContextMenuMove": "Move",
+      "notification": {
+        "errorBlankItemName": {
+          "title": "Error",
+          "message": "Media item could not be saved: Please enter a name."
+        },
+        "renamingSuccess": {
+          "title": "Success",
+          "message": "Media item has been renamed successfully."
+        },
+        "renamingError": {
+          "title": "Error",
+          "message": "Error saving file."
+        }
+      },
+      "labelUploading": "Uploading..."
+    },
+    "sw-media-modal-delete": {
+      "titleModal": {
+        "media": "Delete media files",
+        "folder": "Delete folders",
+        "mediaAndFolder": "Delete folders and media files"
+      },
+      "deleteMessage": {
+        "media": "Are you sure you want to delete \"{name}\"? | Are you sure you want to delete {count} media items?",
+        "folder": "Are you sure you want to delete the folder \"{name}\"?<br>All subfolders and contained media items will be deleted too. | Are you sure you want to delete {count} folders?<br>All subfolders and contained media items will be deleted too.",
+        "mediaAndFolder": "Are you sure you want to delete {mediaCount} media items and {folderCount} folders?<br>All subfolders and contained media items will be deleted too."
+      },
+      "buttonDelete": "Delete",
+      "buttonCancel": "Cancel",
+      "notification": {
+        "successSingle": {
+          "title": "Success",
+          "message": {
+            "media": "File \"{name}\" has been deleted successfully.",
+            "folder": "Folder \"{name}\" has been deleted successfully."
+          }
+        },
+        "errorSingle": {
+          "title": "Error",
+          "message": {
+            "media": "Error deleting file \"{name}\".",
+            "folder": "Error deleting folder \"{name}\"."
+          }
+        },
+        "successOverall": {
+          "title": "Success",
+          "message": {
+            "media": "No file has been successfully deleted. | A file has been successfully deleted. | {count} / {total} files have been successfully deleted.",
+            "folder": "No folder has been successfully deleted. | A folder has been successfully deleted. | {count} / {total} folders have been successfully deleted.",
+            "mediaAndFolder": "No file or folder has been successfully deleted. | A file or a folder has been successfully deleted. | {count} / {total} files or folders have been successfully deleted."
+          }
+        },
+        "errorOverall": {
+          "title": "Error",
+          "message": {
+            "media": "Error deleting files.",
+            "folder": "Error deleting folders.",
+            "mediaAndFolder": "Error deleting files and folders."
+          }
+        }
+      }
+    },
+    "sw-media-modal-folder-dissolve": {
+      "titleModal": "Dissolve folder",
+      "dissolveMessage":"Are you sure you want to dissolve \"{folderName}\" ? | Are you sure you want to dissolve {count} folders?",
+      "buttonDissolve": "Dissolve",
+      "buttonCancel": "Cancel",
+      "notification": {
+        "successSingle": {
+          "title": "Success",
+          "message": "Folder \"{folderName}\"  has been dissolved successfully."
+        },
+        "errorSingle": {
+          "title": "Error",
+          "message": "Error dissolving \"{folderName}\"."
+        },
+        "successOverall": {
+          "title": "Success",
+          "message": "Folders have been dissolved successfully."
+        },
+        "errorOverall": {
+          "title": "Error",
+          "message": "Error dissolving folders."
+        }
+      }
+    },
+    "sw-duplicated-media": {
+      "titleModal": "File already exists",
+      "description": "A file with the name \"{fileName}\" already exists.",
+      "buttonReplace": "Replace file",
+      "buttonRename": "Rename file",
+      "buttonSkip": "Skip file",
+      "buttonCancel": "Cancel",
+      "labelSaveSelection": "Save selection and apply to {count} more.",
+      "labelOptionReplace": "Upload and replace",
+      "labelOptionRename": "Upload and rename",
+      "labelOptionSkip": "Skip file",
+      "labelOldFile": "Existing file",
+      "labelNewFile": "Uploaded file"
+    },
+    "sw-media-modal-move": {
+      "titleModal": "Move \"{mediaName}\" | Move {count} items",
+      "buttonMove": "Move",
+      "buttonAbort": "Cancel",
+      "notification": {
+        "successSingle": {
+          "title": "Success",
+          "message": "Folder \"{mediaName}\"  has been moved successfully."
+        },
+        "errorSingle": {
+          "title": "Error",
+          "message": "Error moving \"{mediaName}\"."
+        },
+        "successOverall": {
+          "title": "Success",
+          "message": "Media items successfully moved"
+        },
+        "errorOverall": {
+          "title": "Error",
+          "message": "Error moving items."
+        }
+      }
+    },
+    "sw-media-modal-replace": {
+      "titleModal": "Replace media files",
+      "buttonUpload": "Upload",
+      "buttonCancel": "Cancel",
+      "buttonReplace": "Replace"
+    },
+    "sw-media-preview": {
+      "fallbackVideoTagSupport": "Your browser does not support the video tag",
+      "fallbackAudioTagSupport": "Your browser does not support the audio tag"
+    },
+    "sw-media-upload": {
+      "buttonFileUpload": "Upload file",
+      "buttonUrlUpload": "Upload file from URL",
+      "buttonSwitchToFileUpload": "Upload file from your computer",
+      "buttonSwitchToUrlUpload": "Upload file from url",
+      "buttonOpenMedia": "Open media",
+      "notification": {
+        "success": {
+          "title": "Media upload",
+          "message": "No file has been saved successfully. | A file has been saved successfully. | {count} / {total} files have been saved successfully.",
+          "titleSuccess": "Media upload finished"
+        },
+        "failure": {
+          "title": "Error",
+          "message": "Error while uploading file."
+        },
+        "illegalFilename": {
+          "title": "Invalid Filename",
+          "message": "The filename \"{fileName}\" contains invalid characters."
+        }
+      },
+      "caption": "Drag files here to upload them"
+    },
+    "sw-media-url-form": {
+      "title": "Upload file from URL",
+      "upload": "Upload",
+      "cancel": "Cancel",
+      "example": "https://www.example.com",
+      "labelFileExtension": "File extension",
+      "invalidUrl": "Please enter a valid URL to upload a file.",
+      "missingFileExtension": "The URL does not contain a file extension. Please enter a file extension above."
+    },
+    "sw-media-modal-folder-settings": {
+      "labelSettings": "Settings",
+      "labelThumbnails": "Thumbnails",
+      "labelFolderName": "Name",
+      "labelInheritSettings": "Inherit settings from parent folder",
+      "labelGenerateThumbnails": "Generate thumbnails for this folder",
+      "labelThumbnailQuality": "Thumbnail quality",
+      "labelThumbnailSize": "Thumbnail size",
+      "labelEditList": "Edit list",
+      "labelStopEdit": "Stop editing",
+      "labelSave": "Save",
+      "labelCancel": "Cancel",
+      "labelKeepProportions": "Keep aspect ratio",
+      "titleDeleteThumbnails": "Delete",
+      "notification": {
+        "success": {
+          "title": "Success",
+          "message": "Settings have been saved successfully."
+        },
+        "error": {
+          "title": "Error",
+          "message": "Error while saving settings."
+        }
+      },
+      "labelDefaultFolder": "Default location for:"
+    },
+    "sw-media-add-thumbnail-form": {
+      "labelMaximumSize": "Maximum size",
+      "labelAdd": "Add"
+    },
+    "sw-sidebar-media-item": {
+      "title": "Media",
+      "placeholderSearch": "Search",
+      "labelLoadMore": "Load more items"
+    },
+    "sw-select": {
+      "messageNoResults": "No results found for \"{term}\"."
+    },
+    "sw-single-select": {
+      "messageNoResults": "No results found for \"{term}\".",
+      "valuePlaceholder": "Choose one"
+    },
+    "sw-label": {
+      "buttonDismiss": "Dismiss"
+    },
+    "sw-search-bar": {
+      "messageNoResults": "No results found for \"{term}\".",
+      "messageNoTypeResults": "No type found.",
+      "placeholderSearchField": "Find products, customers, orders...",
+      "placeholderTypeSearchField": "Search {entity}",
+      "placeholderShortcutInfo": "Tip: Use the \"s\" key to open the search faster.",
+      "labelShowResultsInModule": "Show results in module({count})"
+    },
+    "sw-search-bar-item": {
+      "typeLabelCustomer": "Customer",
+      "typeLabelProduct": "Product",
+      "typeLabelOrder": "Order",
+      "typeLabelMedia": "Media",
+      "typeLabelCategory": "Category",
+      "typeLabelCms": "CMS"
+    },
+    "sw-condition": {
+      "operator": {
+        "lowerThanEquals": "Lower than equals",
+        "equals": "Equals",
+        "greaterThanEquals": "Greater than equals",
+        "lowerThan": "Lower",
+        "greaterThan": "Greater",
+        "notEquals": "Not equals",
+        "isOneOf": "Is one of",
+        "isNoneOf": "Is none of"
+      },
+      "placeholderErrorMessage": "Placeholder can not be saved.",
+      "dataErrorMessage": "Required fields not filled.",
+      "tag": {
+        "placeholder": "Use enter key to submit your values."
+      },
+      "condition": {
+        "dateRangeRule": {
+          "label": "Date range",
+          "useTime": "Use time"
+        },
+        "placeholder": "Select condition",
+        "orderCountRule": "Count of orders",
+        "salesChannelRule": "Sales channel",
+        "currencyRule": "Currency",
+        "billingCountryRule": "Billing country",
+        "billingStreetRule": "Billing street",
+        "billingZipCodeRule": "Billing zip code",
+        "customerGroupRule": "Customer group",
+        "customerNumberRule": "Customer number",
+        "differentAddressesRule": "Different addresses",
+        "isNewCustomerRule": "Is new customer",
+        "lastNameRule": "Last name",
+        "daysSinceLastOrderRule": "Days since last order",
+        "shippingCountryRule": "Shipping country",
+        "shippingStreetRule": "Shipping street",
+        "shippingZipCodeRule": "Shipping zip code",
+        "cartAmountRule": "Cart amount",
+        "goodsCountRule": "Goods count",
+        "goodsPriceRule": "Goods price",
+        "lineItemOfTypeRule": {
+          "label": "Line item of type",
+          "product": "Product",
+          "discount_surcharge": "Discount / surcharge"
+        },
+        "lineItemRule": "Line item",
+        "lineItemsInCartRule": "Line items in cart",
+        "lineItemsInCartCountRule": "Line item count in cart",
+        "lineItemUnitPriceRule": "Line item unit price",
+        "lineItemTotalPriceRule": "Line item total price",
+        "lineItemWithQuantityRule": "Line item with quantity",
+        "yes": "Yes",
+        "no": "No",
+        "withTime": "Use time",
+        "withoutTime": "Don't use time",
+        "and": "And",
+        "or": "Or",
+        "field": {
+          "valuePlaceholder": "Value..."
+        },
+        "placeholder-warning": "Please choose a condition...",
+        "not-found": {
+          "label": "Condition was not found",
+          "error-message": "Condition type {type} was not found. The condition includes the field: {fields} | The condition type {type} was not found. The conditions include the fields: {fields}"
+        },
+        "subCondition": "Subcondition",
+        "deleteConditions": "Delete container",
+        "deleteAllConditions": "Delete all",
+        "createBefore": "Create before",
+        "createAfter": "Create after",
+        "delete": "Delete",
+        "hasDeliveryFreeItemRule": "Shipping free product",
+        "timeRangeRule": "Time range",
+        "weightOfCartRule": "Weight of cart",
+        "dayOfWeekRule": "Day of the week",
+        "lineItemTagRule": "Line item tag"
+      }
+    },
+    "sw-product-image": {
+      "context": {
+        "buttonAsCover": "Use as cover",
+        "buttonDelete": "Delete"
+      }
+    },
+    "sw-simple-search-field": {
+      "defaultPlaceholder": "Search"
+    },
+    "entities": {
+      "custom_field": "Custom field | Custom fields",
+      "cart": "Cart | Carts",
+      "category": "Category | Categories",
+      "cms_page": "Page | Pages",
+      "property": "Property | Properties",
+      "country": "Country | Countries",
+      "currency": "Currency | Currencies",
+      "customer": "Customer | Customers",
+      "customer_address": "Address | Addresses",
+      "customer_group": "Customer group | Customer groups",
+      "integration": "Integration | Integrations",
+      "language": "Language | Languages",
+      "mail_header_footer": "Header and footer | Headers and footers",
+      "mail_template": "Email template | Email templates",
+      "media": "Media",
+      "media_default_folder": "Default folder | Default folders",
+      "media_folder": "Folder | Folders",
+      "media_thumbnail": "Thumbnail | Thumbnails",
+      "media_thumbnail_size": "Thumbnail size | Thumbnail sizes",
+      "number_range": "Number range | Number ranges",
+      "order": "Order | Orders",
+      "order_address": "Address | Addresses",
+      "order_delivery": "Delivery | Deliveries",
+      "order_line_item": "Line item | Line items",
+      "order_state": "Order state | Order states",
+      "order_transaction": "Transaction | Transactions",
+      "order_transaction_state": "Transaction state | Transaction states",
+      "payment_method": "Payment method | Payment methods",
+      "plugin_manager": "Plugins",
+      "privacy": "Privacy",
+      "product": "Product | Products",
+      "product_manufacturer": "Manufacturer | Manufacturers",
+      "product_media": "Product media",
+      "product_stream": "Product group | Product groups",
+      "product_variation": "variant | variants",
+      "promotion": "Promotion | Promotions",
+      "rule": "Rule | Rules",
+      "rule_condition": "Condition | Conditions",
+      "sales_channel": "Sales channel | Sales channels",
+      "sales_channel_type": "Sales channel type | Sales channel types",
+      "salutation": "Salutation | Salutations",
+      "seo_url": "SEO-URL | SEO-URLs",
+      "shipping_method": "Shipping method | Shipping methods",
+      "snippet": "Snippet | Snippets",
+      "tax": "Tax | Taxes",
+      "unit": "Unit | Units",
+      "user": "User | Users"
+    },
+    "day-of-week": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "sw-text-editor-toolbar": {
+    "link": {
+      "openInNewTab": "Open link in new tab",
+      "placeholder": "Enter URL",
+      "linkTo": "Link to",
+      "insert": "Insert"
+    }
+  },
+  "sw-tree": {
+    "general": {
+      "placeholderSearch": "Search",
+      "treeHeadSelected": "{count} selected",
+      "treeHeadline": "Tree structure",
+      "buttonCreate": "Create element",
+      "actions": {
+        "createSub": "New subelement",
+        "createBefore": "New element before",
+        "createAfter": "New element after",
+        "edit": "Edit",
+        "actionsDisabledInLanguage": "Elements can only be created in the default system language",
+        "delete": "Delete"
+      }
+    },
+    "modal": {
+      "modalTitleDelete": "Delete element",
+      "textDeleteConfirm": "Are you sure you really want to delete the element \"{name}\"?",
+      "textDeleteMultipleConfirm": "Are you sure you want to delete the \"{count}\" selected elements?",
+      "textDeleteChildrenConfirm": "All subcategories will be deleted too.",
+      "buttonDelete": "Delete",
+      "buttonCancel": "Cancel"
+    }
+  },
+  "sw-error": {
+    "general": {
+      "statusCodePlaceholder": "Error",
+      "messagePlaceholder": "An error occurred.",
+      "textLink": "Back"
+    }
+  },
+  "sw-property-search": {
+    "placeholderSearch": "Search properties and options",
+    "selected": "{count} option selected | {count} options selected"
+  },
+  "sw-property-assignment": {
+    "columnGroup": "Property",
+    "columnOptions": "Options",
+    "messageEmptyTitle": "No properties yet",
+    "messageEmptySubline": "Manage properties here."
+  },
+  "sw-language-info": {
+    "infoTextChildLanguage": "\"{entityDescription}\" displayed in the language <span>\"{language}\"</span>, which inherits from",
+    "infoTextRootLanguage": "\"{entityDescription}\" displayed in the root language <span>\"{language}\"</span>. Fallback is the system default language",
+    "infoTextNewEntity": "\"{entityDescription}\" is displayed in the system default language. New data should always be maintained in the default language of the system."
+  },
+  "sw-language-switch": {
+    "messageModalUnsavedChanges": "There are unsaved changes in the current language. Do you want to save them now?",
+    "titleModalUnsavedChanges": "Unsaved changes",
+    "titleModalButtonCancelUnsavedChanges": "Cancel",
+    "titleModalButtonRevertUnsavedChanges": "Discard changes",
+    "titleModalButtonSaveChanges": "Save"
+  },
+  "sw-sales-channel-switch": {
+    "messageModalUnsavedChanges": "There are unsaved changes for the current sales channel. Do you want to save them now?",
+    "placeholderSelect": "Search...",
+    "titleModalUnsavedChanges": "Unsaved changes",
+    "titleModalButtonCancelUnsavedChanges": "Cancel",
+    "titleModalButtonRevertUnsavedChanges": "Discard changes",
+    "titleModalButtonSaveChanges": "Save",
+    "labelDefaultOption": "All sales channel"
+  },
+  "sw-config-form-renderer": {
+    "placeholder": "Please fill in {name}...",
+    "option": "No label set for locale \"{locale}\"...",
+    "configLoadErrorMessage": "Encountered an error while loading the configuration: | There were errors loading the configuration:",
+    "configLoadErrorTitle": "Error"
+  },
+  "sw-custom-field-set-renderer": {
+    "general":{
+      "labelButtonSave": "Save"
+    }
+  },
+  "locale": {
+    "de-DE": "German",
+    "en-GB": "English"
+  },
+  "sw-rule-modal": {
+    "modalTitleNew": "Create new global rule",
+    "modalTitleModify": "Modify global rule",
+    "labelDescription": "Description",
+    "placeholderDescription": "Set a description for this rule...",
+    "labelName": "Name",
+    "placeholderName": "Set a name for this rule...",
+    "labelPriority": "Priority",
+    "placeholderPriority": "Set a priority for this rule...",
+    "buttonAbort": "Abort",
+    "buttonSave": "Save",
+    "titleSaveSuccess": "Success",
+    "messageSaveSuccess": "The rule \"{name}\" has been saved successfully.",
+    "titleSaveError": "Error",
+    "messageSaveError": "An error occurred while saving rule \"{name}\"."
+  },
+  "sw-select-rule-create": {
+    "addNewRule": "Neue Regel erstellen"
+  }
+}

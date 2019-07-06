@@ -1,0 +1,96 @@
+{
+  "sw-settings-shipping": {
+    "general": {
+      "mainMenuItemGeneral": "Versand",
+      "placeholderSearchBar": "Durchsuche alle Versandarten",
+      "descriptionTextModule": "Verwaltung von Versandarten."
+    },
+    "list": {
+      "textHeadline": "Versand",
+      "buttonAddShippingMethod": "Versandart anlegen",
+      "buttonCancel": "Abbrechen",
+      "buttonDelete": "Löschen",
+      "columnName": "Name",
+      "columnDescription": "Beschreibung",
+      "columnActive": "Aktiv",
+      "contextMenuEdit": "Bearbeiten",
+      "contextMenuDelete": "Löschen",
+      "contextMenuDuplicate": "Duplizieren",
+      "messageEmpty": "Noch keine Versandarten",
+      "modalTitleDelete": "Versandart",
+      "textDeleteConfirm": "Möchtest Du die Versandart \"{name}\" wirklich löschen?",
+      "titleSidebarItemRefresh": "Aktualisieren",
+      "titleSaveSuccess": "Erfolg",
+      "messageSaveSuccess": "Die Versandart \"{name}\" wurde erfolgreich gespeichert.",
+      "messageSaveError": "Die Versandart \"{name}\" konnte nicht gespeichert werden.",
+      "messageDeleteError": "Die Versandart \"{name}\" konnte nicht gelöscht werden.",
+      "messageDeleteSuccess": "Die Versandart \"{name}\" wurde erfolgreich gelöscht."
+    },
+    "detail": {
+      "textHeadline": "Neue Versandart",
+      "titleCard": "Einstellungen",
+      "titleSaveSuccess": "Erfolg",
+      "messageSaveSuccess": "Die Versandart \"{name}\" wurde erfolgreich gespeichert.",
+      "labelName": "Name",
+      "labelDescription": "Beschreibung",
+      "labelActive": "Aktiv",
+      "labelDeliveryTime": "Lieferzeit",
+      "placeholderName": "Namen eingeben ...",
+      "placeholderDescription": "Beschreibung eingeben ...",
+      "buttonCancel": "Abbrechen",
+      "buttonSave": "Speichern",
+      "labelSetRules": "Regel auswählen",
+      "labelBasicInfo": "Basisinformation",
+      "topRule": "Verfügbarkeitsregel",
+      "labelLogoUpload": "Logo hochladen"
+    },
+    "constants": {
+      "weight": "Gewicht",
+      "price": "Preis",
+      "lineItemCount": "Anzahl Produkte"
+    },
+    "priceMatrix": {
+      "placeholderName": "Preismatrix",
+      "noRestriction": "Keine Regel einschränkung",
+      "addNewRule": "Neue Regel erstellen",
+      "addNewPriceRule": "Neue Preisregel hinzufügen",
+      "duplicateMatrixContextLabel": "Preismatrix duplizieren",
+      "deleteMatrixContextLabel": "Preismatrix löschen",
+      "contextMenuDuplicatePrice": "Preisregel duplizieren",
+      "contextMenuDeletePrice": "Preisregel löschen",
+      "contextMenuModifyPrice": "Preisregel ändern",
+      "selectProperty": "Eigenschaft auswählen",
+      "useRules": "Oder Regeln benutzen",
+      "emptyText": "Um die Preismatrix zu nutzen, musst du zwischen der Verwendung von Eigenschaften oder Regeln wählen.",
+      "calculationLineItemCount": "Anzahl Positionen",
+      "calculationPrice": "Warenkorb Wert",
+      "calculationWeight": "Gewicht",
+      "calculationVolume": "Volumen",
+      "columnQuantityStart": "Menge von",
+      "columnQuantityEnd": "Menge bis",
+      "columnWeightStart": "Gewicht in kg von",
+      "columnWeightEnd": "Gewicht in kg bis",
+      "columnPriceStart": "Warenkorb Wert von",
+      "columnPriceEnd": "Warenkorb Wert bis",
+      "columnVolumeStart": "Volumen von",
+      "columnVolumeEnd": "Volumen bis",
+      "columnPrice": "Preis (Brutto)",
+      "columnCalculationRule": "Regel",
+      "buttonAddAdditionalPriceMatrix": "Weitere Preismatrix hinzufügen",
+      "any": "beliebig",
+      "buttonCancel": "Abbrechen",
+      "buttonDelete": "Löschen",
+      "modalTitleDelete": "Preismatrix löschen",
+      "textDeleteConfirm": "Möchtest Du die Preismatrix \"{name}\" wirklich löschen? | Möchtest Du die Preismatrix wirklich löschen?"
+    },
+    "sidebar": {
+      "labelUseAsLogo": "Als Logo verwenden"
+    },
+    "priceRuleModal": {
+      "modalTitleNew": "Neue Preisregel hinzufügen",
+      "modalTitleModify": "Preisregel bearbeiten",
+      "labelPrice": "Preis",
+      "placeholderPrice": "Preis eingeben ..."
+    }
+  }
+}

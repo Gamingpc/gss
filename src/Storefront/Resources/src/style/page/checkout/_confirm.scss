@@ -1,0 +1,49 @@
+.checkout {
+    &.is-confirm {
+        padding-top: 70px;
+
+        .checkout-container {
+            @extend .row;
+        }
+
+        .checkout-main {
+            @extend .col-lg-8;
+            @extend .offset-lg-2;
+        }
+
+        .checkout-aside {
+            @extend .col;
+            @extend .col-md-6;
+            @extend .offset-md-6;
+            @extend .col-lg-4;
+        }
+    }
+}
+
+.confirm-main-header {
+    margin-bottom: $spacer-lg;
+}
+
+.confirm-product {
+    margin-bottom: $spacer;
+}
+
+.confirm-tos {
+    margin-bottom: $spacer-lg;
+}
+
+.confirm-address,
+.confirm-payment,
+.confirm-shipping {
+    margin-bottom: $spacer-lg;
+}
+
+.confirm-billing-address {
+    margin-bottom: $spacer;
+}
+
+@include media-breakpoint-up(sm) {
+    .confirm-billing-address {
+        margin-bottom: 0;
+    }
+}

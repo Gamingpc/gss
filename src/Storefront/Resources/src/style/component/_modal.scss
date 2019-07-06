@@ -1,0 +1,11 @@
+.modal {
+    .modal-header {
+        &.only-close {
+            border-bottom-color: transparent;
+        }
+    }
+
+    .modal-close:focus {
+        outline: 0;
+    }
+}

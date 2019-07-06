@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Shopware\Core\Framework\Language\LanguageDefinition">
+            <tag name="shopware.entity.definition" entity="language"/>
+        </service>
+
+        <service id="Shopware\Core\Framework\Language\SalesChannel\SalesChannelLanguageDefinition">
+            <tag name="shopware.sales_channel.entity.definition" entity="language"/>
+        </service>
+
+        <service id="Shopware\Core\Framework\Language\LanguageValidator">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="shopware.validator"/>
+        </service>
+
+        <service id="Shopware\Core\Framework\Language\LanguageLoader">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Shopware\Core\Framework\Language\CachedLanguageLoader" decorates="Shopware\Core\Framework\Language\LanguageLoader">
+            <argument type="service" id="Shopware\Core\Framework\Language\CachedLanguageLoader.inner"/>
+            <argument type="service" id="shopware.cache"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Shopware\Core\Framework\Language\TranslationValidator">
+            <tag name="shopware.validator"/>
+        </service>
+    </services>
+</container>

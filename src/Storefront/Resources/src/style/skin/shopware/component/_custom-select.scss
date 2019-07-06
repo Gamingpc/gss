@@ -1,0 +1,16 @@
+/*
+Custom Select
+==============================================
+Custom styling for bootstrap custom select menu.
+
+https://getbootstrap.com/docs/4.3/components/forms/#select-menu
+*/
+
+.custom-select {
+    cursor: pointer;
+
+    &:hover {
+        border-color: $primary;
+        color: $primary;
+    }
+}

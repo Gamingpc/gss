@@ -1,0 +1,18 @@
+<transition name="sw-notifications-slide-fade">
+    <div v-if="notifications.length" class="sw-notifications" :style="notificationsStyle">
+        <transition-group name="sw-notifications-slide-fade">
+            <sw-alert v-for="(notification, index) in notifications"
+                      :class="['sw-notifications__notification--' + index, 'sw-notification__alert']"
+                      :key="notification.uuid"
+                      :title="notification.title"
+                      :variant="notification.variant"
+                      :appearance="notification.system ? 'system' : 'notification'"
+                      :notificationIndex="notification.uuid"
+                      :closable="true"
+                      @swAlertClose="onClose(notification)">
+
+                <div slot="default" v-html="$sanitize(notification.message)"></div>
+            </sw-alert>
+        </transition-group>
+    </div>
+</transition>

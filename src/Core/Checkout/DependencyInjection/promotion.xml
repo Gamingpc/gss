@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="Shopware\Core\Checkout\Promotion\PromotionDefinition">
+            <tag name="shopware.entity.definition" entity="promotion"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionSalesChannel\PromotionSalesChannelDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_sales_channel"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_discount"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionOrderRule\PromotionOrderRuleDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_order_rule"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionPersonaCustomer\PromotionPersonaCustomerDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_persona_customer"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionPersonaRule\PromotionPersonaRuleDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_persona_rule"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionCartRule\PromotionCartRuleDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_cart_rule"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionDiscountRule\PromotionDiscountRuleDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_discount_rule"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Aggregate\PromotionTranslation\PromotionTranslationDefinition">
+            <tag name="shopware.entity.definition" entity="promotion_translation"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Validator\PromotionValidator">
+            <tag name="shopware.validator"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\PromotionGateway">
+            <argument type="service" id="promotion.repository"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Cart\CartPromotionsCollector">
+            <argument type="service" id="Shopware\Core\Checkout\Promotion\PromotionGateway"/>
+            <tag name="shopware.cart.collector"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\DataAbstractionLayer\Indexing\PromotionRedemptionIndexer">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Shopware\Core\Checkout\Promotion\Util\EventIdExtractor"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition"/>
+            <argument type="service" id="promotion.repository"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="shopware.dbal_indexing.indexer" priority="500"/>
+        </service>
+
+        <service id="Shopware\Core\Checkout\Promotion\Util\EventIdExtractor"/>
+    </services>
+</container>

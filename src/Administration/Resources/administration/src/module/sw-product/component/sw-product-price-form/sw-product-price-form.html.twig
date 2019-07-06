@@ -1,0 +1,71 @@
+{% block sw_product_price_form %}
+    <div class="sw-product-price-form">
+
+        <sw-container columns="repeat(auto-fit, minmax(250px, 1fr))" gap="0px 30px">
+            {% block sw_product_price_form_tax_field %}
+                <sw-field type="select"
+                          :label="$tc('sw-product.priceForm.labelTaxRate')"
+                          :placeholder="$tc('sw-product.priceForm.placeholderTaxRate')"
+                          validation="required"
+                          required
+                          v-model="product.taxId">
+                        <option v-for="tax in taxRates" :key="tax.id" :value="tax.id" :selected="product.taxId === tax.id">{{ tax.name }}</option>
+                </sw-field>
+            {% endblock %}
+
+            {% block sw_product_price_form_purchase_price_field %}
+                <sw-field type="number"
+                          :min="0"
+                          :label="$tc('sw-product.priceForm.labelPurchasePriceGross')"
+                          :placeholder="$tc('sw-product.priceForm.placeholderPurchasePriceGross')"
+                          v-model="product.purchasePrice">
+                    <template #suffix>
+                        <span v-if="defaultCurrency">{{ defaultCurrency.symbol }}</span>
+                    </template>
+                </sw-field>
+            {% endblock %}
+        </sw-container>
+
+        {% block sw_product_price_form_price_field %}
+            <sw-price-field
+                :price="product.price"
+                :taxRate="productTaxRate"
+                :currency="defaultCurrency"
+                rootPointer="product"
+                validation="required"
+                required
+                @calculating="priceIsCalculating">
+            </sw-price-field>
+        {% endblock %}
+
+        <sw-container columns="repeat(auto-fit, minmax(150px, 1fr))" gap="0px 30px">
+            {% block sw_product_price_form_purchase_unit_field %}
+                <sw-field type="number"
+                          numberType="int"
+                          :min="0"
+                          :label="$tc('sw-product.priceForm.labelPurchaseUnit')"
+                          :placeholder="$tc('sw-product.priceForm.placeholderPurchaseUnit')"
+                          v-model="product.purchaseUnit">
+                </sw-field>
+            {% endblock %}
+
+            {% block sw_product_price_form_reference_unit_field %}
+                <sw-field type="number"
+                          numberType="int"
+                          :min="0"
+                          :label="$tc('sw-product.priceForm.labelReferenceUnit')"
+                          :placeholder="$tc('sw-product.priceForm.placeholderReferenceUnit')"
+                          v-model="product.referenceUnit">
+                </sw-field>
+            {% endblock %}
+
+            {% block sw_product_price_form_pack_unit_field %}
+                <sw-field type="text"
+                          :label="$tc('sw-product.priceForm.labelPackUnit')"
+                          :placeholder="placeholder(product, 'packUnit', $tc('sw-product.priceForm.placeholderPackUnit'))"
+                          v-model="product.packUnit">
+                </sw-field>
+            {% endblock %}
+        </sw-container>
+    </div>
+{% endblock %}

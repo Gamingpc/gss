@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+
+namespace Shopware\Core\Content\Category\SalesChannel;
+
+use Shopware\Core\Content\Category\CategoryDefinition;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
+use Shopware\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
+
+class SalesChannelCategoryDefinition extends CategoryDefinition implements SalesChannelDefinitionInterface
+{
+    public function processCriteria(Criteria $criteria, SalesChannelContext $context): void
+    {
+        $criteria->addFilter(new EqualsFilter('category.active', true));
+    }
+}

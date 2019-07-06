@@ -1,0 +1,43 @@
+{% block component_product_box_price_info %}
+    <div class="product-price-info">
+        {# @var product \Shopware\Core\Content\Product\SalesChannel\SalesChannelProductEntity #}
+        {% set price = product.calculatedPrice %}
+
+        {% if product.calculatedListingPrice %}
+            {% set price = product.calculatedListingPrice %}
+        {% endif %}
+
+        {% block component_product_box_price_unit %}
+            <p class="product-price-unit">
+                {# Price is based on the purchase unit #}
+                {% block component_product_box_price_purchase_unit %}
+                    {% if product.purchaseUnit and product.purchaseUnit != 0 %}
+                        <span class="product-unit-label">
+                            {{ "listing.boxUnitLabel"|trans }}
+                        </span>
+                        <span class="price-unit-content">
+                            {{ product.purchaseUnit }} {{ product.packUnit }}
+                        </span>
+                    {% endif %}
+                {% endblock %}
+
+                {# Unit price is based on a reference unit #}
+                {% block component_product_box_price_reference_unit %}
+                    {% if product.purchaseUnit and product.referenceUnit and product.purchaseUnit !=  product.referenceUnit %}
+                        <span class="price-unit-reference">
+                            {% set referencePrice = price.unitPrice * product.referenceUnit / product.purchaseUnit %}
+                            ({{ referencePrice|localizedcurrency(page.context.currency.translated.shortName, app.request.locale) }}
+                            {{ "general.star"|trans }} / {{ product.referenceUnit }} {{ product.packUnit }})
+                        </span>
+                    {% endif %}
+                {% endblock %}
+            </p>
+        {% endblock %}
+
+        {% block component_product_box_price %}
+            <p class="product-price">
+                {{ price.unitPrice|localizedcurrency(page.context.currency.translated.shortName, app.request.locale) }}
+            </p>
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+.account-welcome {
+    margin-bottom: $spacer-lg;
+}
+
+.overview-newsletter {
+    margin-bottom: $spacer-lg;
+}
+
+.account-sidebar-item {
+    border: 0;
+
+    &.active {
+        color: $primary;
+        background: $list-group-bg;
+        font-weight: $font-weight-bold;
+    }
+
+    &:hover {
+        color: $primary;
+        background: $list-group-bg;
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "shopware/administration",
+    "description": "Administration frontend for the Shopware Core",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shopware\\Administration\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Test/"
+        ]
+    },
+    "require": {
+        "shopware/core": "dev-master",
+        "symfony/framework-bundle": "4.2.8",
+        "symfony/http-foundation": "4.2.8",
+        "symfony/routing": "4.2.8"
+    }
+}

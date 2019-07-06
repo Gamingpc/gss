@@ -1,0 +1,62 @@
+{% block sw_promotion_discount_component %}
+    <div class="sw-promotion-discount-component">
+        <sw-container columns="1fr 1fr" gap="0px 30px">
+            {% block sw_promotion_discount_component_scope %}
+                <sw-select-field v-model="discount.scope"
+                                 required
+                                 validation="required"
+                                 :label="$tc('sw-promotion.detail.main.discounts.labelScope')">
+                    <option v-for="scope in getScopes()" :value="scope.key">
+                        {{ scope.name }}
+                    </option>
+                </sw-select-field>
+            {% endblock %}
+
+            {% block sw_promotion_discount_condition_consider_product_rules_field %}
+                <sw-field type="switch"
+                          bordered
+                          :label="$tc('sw-promotion.detail.main.discounts.flagProductScopeLabel')"
+                          v-model="discount.considerAdvancedRules">
+                </sw-field>
+            {% endblock %}
+
+        </sw-container>
+
+        {% block sw_promotion_discount_condition_rules_form %}
+            <template v-if="discount.considerAdvancedRules === true">
+                <sw-many-to-many-select
+                        class="sw-promotion-discount-component__select-discount-rules"
+                        localMode
+                        :label="$tc('sw-promotion.detail.main.discounts.labelRules')"
+                        :placeholder="$tc('sw-promotion.detail.main.discounts.placeholder')"
+                        :collection="discount.discountRules">
+                </sw-many-to-many-select>
+            </template>
+        {% endblock %}
+
+        <sw-container columns="1fr 1fr" gap="0px 30px">
+            {% block sw_promotion_discount_component_type %}
+                <sw-select-field v-model="discount.type"
+                                 :label="$tc('sw-promotion.detail.main.discounts.labelType')">
+                    <option v-for="type in getTypes()" :value="type.key">
+                        {{ type.name }}
+                    </option>
+                </sw-select-field>
+            {% endblock %}
+            {% block sw_promotion_discount_component_value %}
+                <sw-field type="number"
+                          validation="required"
+                          required
+                          v-model="discount.value"
+                          :min="getValueMin()"
+                          :max="getValueMax()"
+                          :label="$tc('sw-promotion.detail.main.discounts.labelValue')"
+                          :placeholder="$tc('sw-promotion.detail.main.discounts.placeholderValue')">
+                    <template #suffix>
+                        {{ getValueSuffix() }}
+                    </template>
+                </sw-field>
+            {% endblock %}
+        </sw-container>
+    </div>
+{% endblock %}

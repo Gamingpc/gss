@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Shopware\Core\Framework\Store\Api\StoreController" public="true">
+            <argument type="service" id="Shopware\Core\Framework\Store\Services\StoreClient" />
+            <argument type="service" id="plugin.repository" />
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginManagementService" />
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginLifecycleService" />
+            <argument type="service" id="user.repository" />
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <service id="Shopware\Core\Framework\Store\Services\StoreClient">
+            <argument type="service" id="Shopware\Core\Framework\Store\Services\OpenSSLVerifier" />
+            <argument type="service" id="plugin.repository"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument>%kernel.shopware_version%</argument>
+        </service>
+
+        <service id="Shopware\Core\Framework\Store\Services\OpenSSLVerifier">
+            <argument>%kernel.project_dir%/vendor/shopware/platform/src/Core/Framework/Store/public.key</argument>
+        </service>
+    </services>
+</container>

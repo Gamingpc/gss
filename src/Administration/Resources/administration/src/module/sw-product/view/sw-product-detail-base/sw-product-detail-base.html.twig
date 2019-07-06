@@ -1,0 +1,77 @@
+{% block sw_product_detail_base %}
+    <div class="sw-product-detail-base">
+        {% block sw_product_detail_base_basic_info_card %}
+            <sw-card :title="$tc('sw-product.detailBase.cardTitleProductInfo')" :isLoading="product.isLoading">
+                {% block sw_product_detail_base_basic_info_form %}
+                    <sw-product-basic-form :product="product" :manufacturerStore="manufacturerStore"></sw-product-basic-form>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+
+        {% block sw_product_detail_base_category_card %}
+            <sw-card :title="$tc('sw-product.detailBase.cardTitleAssignment')" :isLoading="product.isLoading">
+                {% block sw_product_detail_base_category_form %}
+                    <sw-product-category-form :product="product"></sw-product-category-form>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+
+        {% block sw_product_detail_base_media_card %}
+            <sw-card :title="$tc('sw-product.detailBase.cardTitleMedia')" :isLoading="product.isLoading">
+                {% block sw_product_detail_base_media_form %}
+                    <sw-product-media-form :product="product"
+                                           @media-drop="$emit('media-drop', $event)">
+                    </sw-product-media-form>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+
+        {% block sw_product_detail_base_seo_card %}
+            <sw-card v-if="next741"
+                     :title="$tc('sw-product.detailBase.cardTitleSeo')"
+                     :isLoading="product.isLoading">
+                {% block sw_product_detail_base_seo_form %}
+                    <sw-settings-seo-entity-detail :entity="product"></sw-settings-seo-entity-detail>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+
+        {% block sw_product_detail_base_price_card %}
+            <sw-card :title="$tc('sw-product.detailBase.cardTitlePrices')" :isLoading="product.isLoading">
+                {% block sw_product_detail_base_price_form %}
+                    <sw-product-price-form :product="product"
+                                           :taxRates="taxes"
+                                           :currencies="currencies"
+                                           @calculating="priceIsCalculating"></sw-product-price-form>
+                {% endblock %}
+
+                {% block sw_product_detail_base_advanced_prices_link %}
+                <sw-container columns="1fr" justify="end">
+                    <router-link :to="{ name: 'sw.product.detail.prices', params: { id: $route.params.id } }" class="sw-card__quick-link">
+                        {{ $tc('sw-product.detailBase.linkAdvancedPrices') }} <sw-icon name="default-arrow-simple-right" small></sw-icon>
+                    </router-link>
+                </sw-container>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+
+        {% block sw_product_detail_base_settings_card %}
+            <sw-card :title="$tc('sw-product.detailBase.cardTitleSettings')" :isLoading="product.isLoading">
+                {% block sw_product_detail_base_settings_form %}
+                    <sw-product-settings-form :product="product"></sw-product-settings-form>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+
+        {% block sw_product_detail_custom_field_sets %}
+        <sw-card :title="$tc('sw-settings-custom-field.general.mainMenuItemGeneral')"
+                 v-if="customFieldSets.length > 0"
+                 :isLoading="product.isLoading">
+                <sw-custom-field-set-renderer
+                        :entity="product"
+                        :sets="customFieldSets">
+                </sw-custom-field-set-renderer>
+            </sw-card>
+        {% endblock %}
+    </div>
+{% endblock %}
