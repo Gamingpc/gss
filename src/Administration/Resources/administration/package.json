@@ -31,7 +31,7 @@
         "app-module-path": "2.2.0",
         "axios": "0.18.1",
         "bottlejs": "1.7.2",
-        "dompurify": "1.0.10",
+        "dompurify": "2.0.3",
         "eslint-friendly-formatter": "4.0.1",
         "flatpickr": "4.5.2",
         "lodash": "4.17.11",
