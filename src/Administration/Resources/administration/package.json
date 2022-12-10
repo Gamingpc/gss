@@ -91,7 +91,7 @@
         "eslint-plugin-promise": "4.1.1",
         "eventsource-polyfill": "0.9.6",
         "expose-loader": "0.7.5",
-        "express": "4.16.4",
+        "express": "4.17.3",
         "file-loader": "3.0.1",
         "friendly-errors-webpack-plugin": "1.7.0",
         "function-bind": "1.1.1",
